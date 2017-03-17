@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Item;
 
 class itemController extends Controller
 {
@@ -13,7 +14,9 @@ class itemController extends Controller
      */
     public function index()
     {
-        //
+        $items = Item::all();
+
+        return view('items', compact('items'));
     }
 
     /**
@@ -45,7 +48,9 @@ class itemController extends Controller
      */
     public function show($id)
     {
-        //
+        $item = Item::find($id);
+
+        return view('items.show', compact('item'));
     }
 
     /**
