@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', 'itemController@index');
+Route::get('/', 'itemsController@index');
+Route::post('/items', 'itemsController@store');
 
 

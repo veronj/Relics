@@ -9,20 +9,21 @@
 </div>
 <h3>Form :</h3>
 
-    <form>
+    <form method="POST" action="/items">
+        {{ csrf_field() }}
         <div class="form-group">
-            <label for="exampleInputEmail1">Item Name</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="name">Item Name</label>
+            <input type="text" class="form-control" id="name" name="name">
         </div>
 
         <div class="form-group">
-            <label for="exampleTextarea">Example textarea</label>
-            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+            <label for="type">type</label>
+            <select class="form-control" id="type" name="type">
+                <option>Warframe</option>
+                <option>Primary</option>
+                <option>Secondary</option>
+                <option>Melee</option>
+            </select>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>

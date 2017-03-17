@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Item;
 
-class itemController extends Controller
+class itemsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,7 +37,14 @@ class itemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $item = new Item;
+        $item->name = $request->name;
+        $item->type = $request->type;
+        
+        $item->save();
+
+        return redirect('/');
     }
 
     /**
