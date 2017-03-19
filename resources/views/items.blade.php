@@ -1,12 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div>
+<div class="container">
     <h3>Items List :</h3>
             @foreach ($items as $item)
                 <li> {{ $item }}</li>
             @endforeach
-</div>
+<hr>
+
 <h3>Form :</h3>
 
     <form method="POST" action="/items">
@@ -28,5 +29,5 @@
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-
+</div>
 @endsection

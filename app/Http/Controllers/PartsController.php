@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Part;
 use App\Item;
 
-class itemsController extends Controller
+class PartsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,7 @@ class itemsController extends Controller
      */
     public function index()
     {
-        $items = Item::all();
-
-        return view('items', compact('items'));
+        //
     }
 
     /**
@@ -26,7 +25,9 @@ class itemsController extends Controller
      */
     public function create()
     {
-        //
+        $items = Item::all();
+
+       return view('parts', compact('items'));
     }
 
     /**
@@ -37,16 +38,15 @@ class itemsController extends Controller
      */
     public function store(Request $request)
     {
-
-//        $item = new Item;
-//        $item->name = $request->name;
-//        $item->type = $request->type;
-//        
-//        $item->save();
-
-      Item::create(request(['name', 'type']));
-
-        return redirect('/');
+        dd($request->all());
+        $parts_array = array();
+        $parts_array[] = $request->part_1;
+        $parts_array[] = $request->part_2;
+        $parts_array[] = $request->part_3;
+        $parts_array[] = $request->part_4;
+        foreach ($parts_array as $parts) {
+            
+        }
     }
 
     /**
@@ -57,11 +57,7 @@ class itemsController extends Controller
      */
     public function show($id)
     {
-        $item = Item::find($id);
-        $parts = $item->parts;
-       // dd($item);
-
-        return view('items_show', compact('item', 'parts'));
+        //
     }
 
     /**

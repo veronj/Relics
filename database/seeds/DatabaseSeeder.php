@@ -25,5 +25,13 @@ class DatabaseSeeder extends Seeder
             ['name' => 'A1', 'dropable' => '1'],
             ['name' => 'G2', 'dropable' => '1']
         ]);
+
+        DB::table('parts')->insert([
+            ['name' => 'neuroptics', 'item_id' => '1'],
+            ['name' => 'chassis', 'item_id' => '1'],
+            ['name' => 'systems', 'item_id' => '1'],
+            ['name' => 'blueprint', 'item_id' => '1'],
+            ['name' => 'receiver', 'item_id' => '2']
+        ]);
     }
 }

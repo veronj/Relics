@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Item;
 
-class itemsController extends Controller
+class RelicsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,7 @@ class itemsController extends Controller
      */
     public function index()
     {
-        $items = Item::all();
-
-        return view('items', compact('items'));
+       return view('relics');
     }
 
     /**
@@ -37,16 +35,7 @@ class itemsController extends Controller
      */
     public function store(Request $request)
     {
-
-//        $item = new Item;
-//        $item->name = $request->name;
-//        $item->type = $request->type;
-//        
-//        $item->save();
-
-      Item::create(request(['name', 'type']));
-
-        return redirect('/');
+        //
     }
 
     /**
@@ -58,8 +47,8 @@ class itemsController extends Controller
     public function show($id)
     {
         $item = Item::find($id);
-        $parts = $item->parts;
-       // dd($item);
+        // $parts = $item->parts;
+        dd($item);
 
         return view('items_show', compact('item', 'parts'));
     }
