@@ -17,6 +17,7 @@ class CreatePartsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('item_id')->unsigned();
+            $table->integer('amount_needed');
            // $table->foreign('item_id')->references('id')->on('items');
 
             $table->timestamps();
